@@ -1,0 +1,33 @@
+﻿.jumbotron {
+  text-align: center;
+  font-size: 60px;
+}
+.box {
+  border: solid;
+  margin: 20px;
+}
+.diceImg{
+  width: 60%;
+}
+.pigWinner{
+  width: 70%;
+}
+.col-sm-4{
+  text-align: center;
+}
+.turnP2{
+  display: none;
+}
+.restart {
+  display: none;
+  text-align: center;
+}
+#ReStartbtn {
+  margin: 30px;
+}
+.center{
+      text-align: center;
+}
+body { 
+    padding-top: 100px; 
+}
