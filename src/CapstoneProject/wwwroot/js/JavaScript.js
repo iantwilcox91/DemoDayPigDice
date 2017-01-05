@@ -1,7 +1,7 @@
-﻿var curPtsVar = 0
-var plr1PtsTotal = 0
-var plr2PtsTotal = 0
-var whosTurn = 1
+﻿var curPtsVar = 0;
+var plr1PtsTotal = 0;
+var plr2PtsTotal = 0;
+var whosTurn = 1;
 
 function diceRoll() {
     var rollResult = Math.floor((Math.random() * 6) + 1);
@@ -24,6 +24,7 @@ function totalCurrentPoints(i) {
 
 function rolledOne(i) {
     if (i === 1) {
+        alert("You Rolled a one. It is now the next players turn");
         curPtsVar = 0;
         $(".CurPts").text(curPtsVar);
         $("ul").empty();
@@ -51,7 +52,7 @@ function changeTurn() {
     } else {
         whosTurn = 2;
     }
-    hideNotTurn()
+    hideNotTurn();
 }
 
 function hideNotTurn() {
@@ -66,18 +67,18 @@ function hideNotTurn() {
 
 function winner() {
     if (plr1PtsTotal > 99) {
-        var name = $("input.player1name").val().toUpperCase();
+        var name1 = $("input.player1name").val().toUpperCase();
 
         $(".gameDisplay").hide();
         $(".restart").show();
-        $(".restart h1").text(name + " You Are the WINNER!!!!!");
+        $(".restart h1").text(name1 + " You Are the WINNER!!!!!");
     }
     if (plr2PtsTotal > 99) {
-        var name = $("input.player2name").val().toUpperCase();
+        var name2 = $("input.player2name").val().toUpperCase();
 
         $(".gameDisplay").hide();
         $(".restart").show();
-        $(".restart h1").text(name + " You Are the WINNER!!!!!");
+        $(".restart h1").text(name2 + " You Are the WINNER!!!!!");
     }
 }
 
@@ -105,6 +106,7 @@ $(document).ready(function () {
     });
 
     $("#PASSbtn").click(function () {
+        alert("it is now the next players turn");
         sumPts();
         changeTurn();
         winner();
